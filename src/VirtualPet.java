@@ -1,23 +1,22 @@
 
-public class VirtualPet {
+public abstract class VirtualPet {
 
 	protected String name;
 	protected String type;
+	protected int happiness;
+	protected int health;
+	
 	//protected String id;
 	
-	protected int health;
-	protected int happiness;
-//	
 	
 	
-	public VirtualPet(){
+	public void play(){
 		
 	}
 	
-	public int play(){
-		return happiness + 1 ;
+	protected void speak(){
+		
 	}
-	
 	
 	
 }

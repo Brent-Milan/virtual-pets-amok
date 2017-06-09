@@ -1,7 +1,9 @@
 
+public class Cat extends VirtualPet {
 
-public abstract class Cat extends VirtualPet {
+	public Cat() {
+		
+	}
 
 	
-
 }
