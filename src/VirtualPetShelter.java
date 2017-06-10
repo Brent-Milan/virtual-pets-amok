@@ -1,6 +1,7 @@
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class VirtualPetShelter {
 
@@ -35,12 +36,22 @@ public class VirtualPetShelter {
 	}
 	
 	protected void chargeAll() {
-		for(VirtualPet current : shelterPets.values()) {
+		for(VirtualPet current : pets()) {
 			if(current instanceof Robotic) {
 			((Robotic) current).charge();
 			}
 		}
 	}
+	
+	protected void displayPets() {
+		for(Entry<Integer, VirtualPet> current: shelterPets.entrySet()) {
+			int petID = current.getKey();
+			VirtualPet pet = current.getValue();
+			System.out.println("ID: " + petID + "  Name: " + pet.name); 
+	}
+}
+		
+	
 	
 	
 }

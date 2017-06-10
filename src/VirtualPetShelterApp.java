@@ -40,8 +40,8 @@ public class VirtualPetShelterApp {
 				} else {
 					System.out.println("All " + shelter.getSize() + " organic animals have been fed!");
 				}
-			shelter.feedAll();
-			break;
+				shelter.feedAll();
+				break;
 			case 2:
 				if(shelter.getSize() == 1) {
 					System.out.println("Your organic shelter pet has been watered!");
@@ -51,7 +51,15 @@ public class VirtualPetShelterApp {
 				shelter.waterAll();
 				break;
 			case 3:	
-				
+				if(shelter.getSize() == 1) {
+					System.out.println("Your organic shelter pet has been charged!");
+				} else {
+					System.out.println("All " + shelter.getSize() + " robotic animals have been charge!");
+				}
+				shelter.chargeAll();
+				break;
+			case 4: 
+				System.out.println("");
 			default:
 		}
 	
