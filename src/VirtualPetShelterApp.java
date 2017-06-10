@@ -1,12 +1,16 @@
+import java.util.Scanner;
 
 public class VirtualPetShelterApp {
 
 	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		VirtualPetShelter shelter = new VirtualPetShelter();
 	
-	System.out.println("\n\nWelcome To The Team!! Remember our motto: ");
-	System.out.println("\n\"Market-friendly name; but corporate culture\".");
+		System.out.println("\n\nWelcome To The Team!! Remember our motto: ");
+		System.out.println("\n\"Market-friendly name; but corporate culture\".");
 	
-	do {
+//	do {
 		System.out.println("\n----------------------------------------------------");
 		System.out.println("\nWelcome to the *Altruistic Hipster* Pet Shelter:\n");
 		System.out.println("Thank you for interning. We're happy to not pay you!\n");
@@ -16,21 +20,40 @@ public class VirtualPetShelterApp {
 //		shelter.displayMenu();
 			
 		System.out.println("\nWhat would you like to do?");
-		System.out.println("1. Feed the Pets.");
-		System.out.println("2. Water the Pets.");
-		System.out.println("3. Play with a pet");
-		System.out.println("4. Adopt a shelter pet");
-		System.out.println("5. Admit a homeless pet");
-		System.out.println("6. Clean the cages");
+		System.out.println("1. Feed all organic pets.");
+		System.out.println("2. Water all organic pets.");
+		System.out.println("3. Charge all robotic pets");
+		System.out.println("4. Play with a pet");
+		System.out.println("5. Adopt a shelter pet");
+		System.out.println("6. Admit a homeless pet");
+		System.out.println("7. Clean the cages of all organic pets.");
 //			if(!shelter.allClean()) {
 //				System.out.println("\nSome of the animals are quite dirty. Time to clean the cages.");
 //			}
-//		int userInput = input.nextInt();
+		int userInput = input.nextInt();
 		
 		
-//		switch(userInput) {
-			case 1:
-	
+		switch(userInput) {
+			case 1: 
+				if(shelter.getSize() == 1) {
+					System.out.println("Your shelter pet has been fed!");
+				} else {
+					System.out.println("All " + shelter.getSize() + " organic animals have been fed!");
+				}
+			shelter.feedAll();
+			break;
+			case 2:
+				if(shelter.getSize() == 1) {
+					System.out.println("Your organic shelter pet has been watered!");
+				} else {
+					System.out.println("All " + shelter.getSize() + " organic animals have been fed!");
+				}
+				shelter.waterAll();
+				break;
+			case 3:	
+				
+			default:
+		}
 	
 	
 	
