@@ -5,5 +5,8 @@ public class Cat extends VirtualPet {
 		
 	}
 
-	
+	@Override
+	protected String speak(){
+		return "Meow";
+	}
 }

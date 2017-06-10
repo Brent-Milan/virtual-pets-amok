@@ -5,5 +5,13 @@ public class Dog extends VirtualPet {
 		
 	}
 	
+	protected String speak(){
+		return "Woof";
+	}
+	
+	protected void walk(){
+		happiness += 5;
+	}
+	
 	
 }

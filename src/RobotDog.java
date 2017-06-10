@@ -1,8 +1,8 @@
 
 public class RobotDog extends VirtualPet implements Robotic {
 
-	protected int maintenance;
-	protected int energy;
+	protected int maintenance; // 1 - 10 Keep High
+	protected int energy;  // 1 - 10 Keep High
 	
 	public RobotDog() {
 		maintenance = 10;
@@ -11,7 +11,7 @@ public class RobotDog extends VirtualPet implements Robotic {
 	
 	@Override
 	public void maintain() {
-		 maintenance += 10;
+		 maintenance = 10;
 	}
 	
 	@Override
@@ -23,5 +23,10 @@ public class RobotDog extends VirtualPet implements Robotic {
 	public void play() {
 		energy -= 2;
 	}
+	
+//	@Override
+//	public void walk(){
+//		happiness += 5;	
+//	}
 	
 }

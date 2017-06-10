@@ -27,6 +27,13 @@ public class OrganicDog extends Dog implements Organic{
 		happiness += 5;
 	}
 	
+	@Override
+	protected void walk() {
+		happiness += 5;
+		wasteLevel -= 4;  //reduces waste by double the level of tick()
+	}
+	
+	
 	public void cleanCage() {
 		wasteLevel = 0;
 	}
