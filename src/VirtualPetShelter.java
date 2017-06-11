@@ -10,14 +10,23 @@ public class VirtualPetShelter {
 	protected void addPet(int x, VirtualPet y) {
 		shelterPets.put(x, y);
 	}
+	protected Collection<VirtualPet> pets(){
+		return shelterPets.values();
+	}
+	
+	protected int robotCount() {
+		int count = 0;
+		for(VirtualPet current: pets) {
+			if(current instanceof Robotic) {
+				count++;
+			}
+		} return count;
+	}
 	
 	protected int getSize() {
 		return shelterPets.size();
 	}
 	
-	protected Collection<VirtualPet> pets(){
-		return shelterPets.values();
-	}
 	
 	protected void feedAll() {
 		for(VirtualPet current : shelterPets.values()) {
@@ -43,6 +52,14 @@ public class VirtualPetShelter {
 		}
 	}
 	
+	protected void maintainAll() {
+		for(VirtualPet current: pets()) {
+			if(current instanceof Robotic) {
+			((Robotic) current).maintain();
+			}
+		}
+	}
+	
 	protected void displayPets() {
 		for(Entry<Integer, VirtualPet> current: shelterPets.entrySet()) {
 			int petID = current.getKey();
@@ -50,7 +67,8 @@ public class VirtualPetShelter {
 			System.out.println("ID: " + petID + "  Name: " + pet.name); 
 	}
 }
-		
+	
+	
 	
 	
 	

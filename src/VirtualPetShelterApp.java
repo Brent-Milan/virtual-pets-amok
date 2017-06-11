@@ -20,13 +20,15 @@ public class VirtualPetShelterApp {
 //		shelter.displayMenu();
 			
 		System.out.println("\nWhat would you like to do?");
-		System.out.println("1. Feed all organic pets.");
+		System.out.println("\n1. Feed all organic pets.");
 		System.out.println("2. Water all organic pets.");
 		System.out.println("3. Charge all robotic pets");
-		System.out.println("4. Play with a pet");
-		System.out.println("5. Adopt a shelter pet");
-		System.out.println("6. Admit a homeless pet");
-		System.out.println("7. Clean the cages of all organic pets.");
+		System.out.println("4. Perform maintenance on all robotic pets");
+		System.out.println("5. Play with a pet");
+		System.out.println("6. Adopt a shelter pet");
+		System.out.println("7. Admit a homeless pet");
+		System.out.println("8. Clean the cats' litter box");
+		System.out.println("9. Clean the cages of all organic dogs.");
 //			if(!shelter.allClean()) {
 //				System.out.println("\nSome of the animals are quite dirty. Time to clean the cages.");
 //			}
@@ -52,11 +54,12 @@ public class VirtualPetShelterApp {
 				break;
 			case 3:	
 				if(shelter.getSize() == 1) {
-					System.out.println("Your organic shelter pet has been charged!");
+					System.out.println("Your robotic shelter pet has been charged!");
 				} else {
 					System.out.println("All " + shelter.getSize() + " robotic animals have been charge!");
 				}
 				shelter.chargeAll();
+				shelter.maintainAll();
 				break;
 			case 4: 
 				System.out.println("");
