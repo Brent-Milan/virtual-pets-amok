@@ -5,18 +5,25 @@ import java.util.Map.Entry;
 
 public class VirtualPetShelter {
 
-	private Map<Integer, VirtualPet> shelterPets = new HashMap<Integer, VirtualPet>();
+	protected int litterBox = 0;
 	
-	protected void addPet(int x, VirtualPet y) {
-		shelterPets.put(x, y);
+	private Map<String, VirtualPet> shelterPets = new HashMap<String, VirtualPet>();
+	
+	protected void addPet(String type, VirtualPet name) {
+		shelterPets.put(type, name);
 	}
+	
+	/****************************************************
+	 * Methods for checking number of occurrences of an interface
+	 * OR checking map size
+	 ***************************************************/
 	protected Collection<VirtualPet> pets(){
 		return shelterPets.values();
 	}
 	
 	protected int robotCount() {
 		int count = 0;
-		for(VirtualPet current: pets) {
+		for(VirtualPet current: pets()) {
 			if(current instanceof Robotic) {
 				count++;
 			}
@@ -61,14 +68,16 @@ public class VirtualPetShelter {
 	}
 	
 	protected void displayPets() {
-		for(Entry<Integer, VirtualPet> current: shelterPets.entrySet()) {
-			int petID = current.getKey();
+		for(Entry<String, VirtualPet> current: shelterPets.entrySet()) {
+			String petType = current.getKey();
 			VirtualPet pet = current.getValue();
-			System.out.println("ID: " + petID + "  Name: " + pet.name); 
+			System.out.println("ID: " + petType + "  Name: " + pet.name); 
 	}
 }
 	
-	
+	public void cleanLitterBox() {
+		litterBox = 0;
+	}
 	
 	
 	

@@ -1,13 +1,17 @@
 
 public class OrganicCat extends Cat implements Organic{
 	
-	public int hunger; // 1- 20 Keep Low
-	public int thirst;  //1-20  Keep Low
-	public int wasteLevel;   // 1-20   Keep Low
+	protected int hunger; // 1- 10 Keep Low
+	protected int thirst; // 1-10  Keep Low
+	//wasteLevel not applicable. 
+	//See: VirtualPetShelter -> litterBox
 	
 	//constructor
-	public OrganicCat(int hunger){
-		this.hunger = hunger;
+	public OrganicCat(String name, String type){
+		super(name, type);
+		hunger = 5;
+		thirst = 5;
+		
 	}
 	
 	@Override
@@ -26,8 +30,6 @@ public class OrganicCat extends Cat implements Organic{
 		happiness += 5;
 	}
 	
-	public void cleanLitterBox() {
-		wasteLevel = 0;
-	}
+	
 	
 }

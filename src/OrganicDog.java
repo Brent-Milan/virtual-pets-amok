@@ -7,9 +7,11 @@ public class OrganicDog extends Dog implements Organic{
 	public int wasteLevel;   // 1-20   Keep Low
 	
 	//constructor
-	public OrganicDog(int hunger){
-		this.hunger = hunger;
-	}
+	public OrganicDog(String name, String type){
+		super(name, type);
+		hunger = 5;
+		thirst = 5;
+		
 	
 	@Override
 	public void feed() {

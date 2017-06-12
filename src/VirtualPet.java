@@ -3,11 +3,11 @@ public abstract class VirtualPet {
 
 	protected String name;
 	protected String type;
-	protected int happiness;
+	protected String happiness;
+	// Note: AI pets also express happiness/discontent
+	// in response to care/neglect.
+	
 	protected boolean health;
-	
-	//protected String id;
-	
 	
 	
 	public void play(){

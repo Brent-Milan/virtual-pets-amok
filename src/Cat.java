@@ -1,7 +1,7 @@
 
 public class Cat extends VirtualPet {
 
-	public Cat() {
+	public Cat(String name, String type) {
 		
 	}
 

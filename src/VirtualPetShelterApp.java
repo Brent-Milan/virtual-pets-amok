@@ -59,10 +59,10 @@ public class VirtualPetShelterApp {
 					System.out.println("All " + shelter.getSize() + " robotic animals have been charge!");
 				}
 				shelter.chargeAll();
-				shelter.maintainAll();
 				break;
 			case 4: 
-				System.out.println("");
+				System.out.println("Oil applied, drivers updated, and general maintenance performed on your robotic pets.");
+				shelter.maintainAll();
 			default:
 		}
 	
