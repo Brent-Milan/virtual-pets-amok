@@ -11,6 +11,13 @@ public class VirtualPetShelter {
 	
 	protected void addPet(VirtualPet addMe) {
 		shelterPets.put(addMe.type, addMe);
+		//System.out.println(addPetAnnounce(addMe));
+	}
+	
+	protected void addPetAnnounce() {
+		for(VirtualPet x: shelterPets.values()) {
+		System.out.println(x.name + "has been added to the shelter!");
+		}
 	}
 	
 	/****************************************************

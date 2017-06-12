@@ -9,6 +9,11 @@ public abstract class VirtualPet {
 	
 	protected boolean health;
 	
+	protected VirtualPet(String name, String type) {
+		this.name = name;
+		this.type = type;
+	}
+	
 	
 	public void play(){
 		
