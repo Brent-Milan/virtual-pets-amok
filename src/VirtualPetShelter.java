@@ -11,7 +11,7 @@ public class VirtualPetShelter {
 	protected int litterBox = 0;
 	
 	protected void addPet(VirtualPet addMe) {
-		shelterPets.put(addMe.type, addMe);
+		shelterPets.put(addMe.name, addMe);
 		// System.out.println(addPetAnnounce(addMe));
 	}
 
@@ -25,7 +25,7 @@ public class VirtualPetShelter {
 		for (Entry<String, VirtualPet> current : shelterPets.entrySet()) {
 			VirtualPet pet = current.getValue();
 			String petType = current.getKey();
-			System.out.println("Type: " + petType + "  Name: " + pet.name);
+			System.out.println("Type: " + pet.type + "  Name: " + pet.name);
 		}
 	} 
 	
