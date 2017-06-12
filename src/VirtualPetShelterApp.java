@@ -6,6 +6,15 @@ public class VirtualPetShelterApp {
 		Scanner input = new Scanner(System.in);
 		
 		VirtualPetShelter shelter = new VirtualPetShelter();
+		
+		RobotDog rDog = new RobotDog("Foxy", "Robot Dog");
+		RobotCat rCat = new RobotCat("Momo", "Robot Cat");
+		OrganicDog oDog = new OrganicDog("Sly", "Organic Dog");
+		OrganicCat oCat = new OrganicCat("Drumpf", "Organic Cat");
+		shelter.addPet(rDog);
+		shelter.addPet(rCat);
+		shelter.addPet(oDog);
+		shelter.addPet(oCat);
 	
 		System.out.println("\n\nWelcome To The Team!! Remember our motto: ");
 		System.out.println("\n\"Market-friendly name; but corporate culture\".");

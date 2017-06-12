@@ -9,8 +9,8 @@ public class VirtualPetShelter {
 	
 	private Map<String, VirtualPet> shelterPets = new HashMap<String, VirtualPet>();
 	
-	protected void addPet(String type, VirtualPet name) {
-		shelterPets.put(type, name);
+	protected void addPet(VirtualPet addMe) {
+		shelterPets.put(addMe.type, addMe);
 	}
 	
 	/****************************************************
