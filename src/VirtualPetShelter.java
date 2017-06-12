@@ -20,6 +20,41 @@ public class VirtualPetShelter {
 		}
 	}
 
+	protected void displayPets() {
+		for (Entry<String, VirtualPet> current : shelterPets.entrySet()) {
+			VirtualPet pet = current.getValue();
+			String petType = current.getKey();
+			System.out.println("Type: " + petType + "  Name: " + pet.name);
+		}
+	} 
+	
+	protected void displayOrganicStatus() {
+		System.out.println("  Name\t  | Hunger | Thirst |");
+		System.out.println("--------------------------------");
+		for(VirtualPet current: pets()) {
+			if(current instanceof OrganicDog) {
+				System.out.println(current.name + "\t\t" + ((OrganicDog)current).hunger + "\t" + ((OrganicDog)current).thirst);
+			}
+			if(current instanceof OrganicCat) {
+				System.out.println(current.name + "\t\t" + ((OrganicCat)current).hunger + "\t" + ((OrganicCat)current).thirst);
+			}
+		}
+	}
+	
+	protected void displayRoboticStatus() {
+		System.out.println("\n  Name\t  | Maintenance| Energy |");
+		System.out.println("------------------------------------");
+		for(VirtualPet current: pets()) {
+			if(current instanceof RobotDog) {
+				System.out.println(current.name + "\t\t" + ((RobotDog)current).maintenance + "\t" + ((RobotDog)current).energy);
+			}
+			if(current instanceof RobotCat) {
+				System.out.println(current.name + "\t\t" + ((RobotCat)current).maintenance + "\t" + ((RobotCat)current).energy);
+			}
+		}
+	}
+	
+	
 	/****************************************************
 	 * Methods for checking number of occurrences of an interface OR checking
 	 * map size
@@ -42,6 +77,9 @@ public class VirtualPetShelter {
 		return shelterPets.size();
 	}
 
+	/*********************************
+	 * Interactions with All pets
+	 *********************************/
 	protected void feedAll() {
 		for (VirtualPet current : shelterPets.values()) {
 			if (current instanceof Organic) {
@@ -82,13 +120,9 @@ public class VirtualPetShelter {
 		}
 	}
 
-	protected void displayPets() {
-		for (Entry<String, VirtualPet> current : shelterPets.entrySet()) {
-			VirtualPet pet = current.getValue();
-			String petType = current.getKey();
-			System.out.println("Type: " + petType + "  Name: " + pet.name);
-		}
-	}
+	/***************
+	 * Boolean Tests
+	 ****************/
 
 	protected boolean isCageClean() {
 		for(VirtualPet current: pets()) {
@@ -131,9 +165,6 @@ public class VirtualPetShelter {
 	}
 		
 	
-		
-	
-	
 	protected boolean petCheck(String message) {
 		for (VirtualPet current : pets()) {
 			if (message.equalsIgnoreCase(current.name)) {
@@ -145,6 +176,9 @@ public class VirtualPetShelter {
 	
 	
 	
+	public void cleanLitterBox() {
+		litterBox = 0;
+	}
 	
 	
 //	protected void feedPet(String message) {
@@ -156,8 +190,5 @@ public class VirtualPetShelter {
 	
 
 
-	public void cleanLitterBox() {
-		litterBox = 0;
-	}
 
 }

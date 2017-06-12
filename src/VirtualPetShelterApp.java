@@ -30,7 +30,9 @@ public class VirtualPetShelterApp {
 		
 		System.out.println("This is the current status of your pets: \n");
 		
-		shelter.displayMenu();
+		shelter.displayRoboticStatus();
+		
+		shelter.displayOrganicStatus();
 			
 		System.out.println("\nWhat would you like to do?");
 		System.out.println("\n1. Feed all organic pets.");
@@ -43,7 +45,7 @@ public class VirtualPetShelterApp {
 			if(!shelter.isLitterBoxClean()) {
 				System.out.println("\nWARNING: The shelter litter box is overflowing. Please clean it ASAP.");
 			} else if (!shelter.isCageClean()) {
-				System.out.println("\n WARNING: The dog cages are a filthy mess. Please clean them ASAP".);
+				System.out.println("\n WARNING: The dog cages are a filthy mess. Please clean them ASAP.");
 			}
 		int userInput = input.nextInt();
 		
