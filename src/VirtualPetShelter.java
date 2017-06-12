@@ -24,7 +24,6 @@ public class VirtualPetShelter {
 	protected void displayPets() {
 		for (Entry<String, VirtualPet> current : shelterPets.entrySet()) {
 			VirtualPet pet = current.getValue();
-			String petType = current.getKey();
 			System.out.println("Type: " + pet.type + "  Name: " + pet.name);
 		}
 	} 
