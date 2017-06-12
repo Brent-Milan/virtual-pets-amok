@@ -8,22 +8,38 @@ public class RobotDog extends Dog implements Robotic {
 		super(name, type);
 		maintenance = 10;
 		energy = 10;
+		happiness = 10;
 	}
 	
 	@Override
 	public void maintain() {
-		 maintenance = 10;
+		maintenance = 10;
+		happiness += 5;
+		if (happiness > 10) {
+			happiness = 10;
+		}
 	}
 	
 	@Override
 	public void charge() {
-		energy += 10;
+		energy = 10;
+		happiness += 5;
+		if (happiness > 10) {
+			happiness = 10;
+		}
 	}
-	
-	//Not currently used
+
 	@Override
 	public void play() {
 		energy -= 2;
+		happiness += 5;
+		if (happiness > 10) {
+			happiness = 10;
+		}
+	}
+	
+	protected boolean isHappy() {
+		return happiness >= 1;
 	}
 	
 	@Override
@@ -32,10 +48,6 @@ public class RobotDog extends Dog implements Robotic {
 		energy -= 1;
 	}
 	
-	public boolean isHappy() {
-		if(maintenance >= 1 && energy >= 1) {
-			return true;
-		} return false;
-	}
+	
 	
 }

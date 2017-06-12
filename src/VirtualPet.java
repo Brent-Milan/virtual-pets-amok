@@ -3,7 +3,7 @@ public abstract class VirtualPet {
 
 	protected String name;
 	protected String type;
-	protected String happiness;
+	protected int happiness;
 	// Note: AI pets also express happiness
 	
 	
@@ -21,11 +21,7 @@ public abstract class VirtualPet {
 		return "";
 	}
 	
+	protected int getHappiness() {
+		return happiness;
+	}
 	
-//	protected void tick(Dog x){
-//		happiness -= 2;
-//		if( x = x.instanceOf(RobotDog)) {
-//			maintenance -= 1;
-//		}
-//	}
-}

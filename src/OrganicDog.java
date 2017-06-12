@@ -11,6 +11,7 @@ public class OrganicDog extends Dog implements Organic{
 		super(name, type);
 		hunger = 5;
 		thirst = 5;
+		happiness = 10;
 		wasteLevel = 0;
 	}
 		
