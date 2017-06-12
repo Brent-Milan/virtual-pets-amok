@@ -31,7 +31,7 @@ public class VirtualPetShelterApp {
 		System.out.println("This is the current status of your pets: \n");
 		
 		shelter.displayRoboticStatus();
-		
+		System.out.println(" ");
 		shelter.displayOrganicStatus();
 			
 		System.out.println("\nWhat would you like to do?");

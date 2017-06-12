@@ -20,6 +20,7 @@ public class RobotDog extends Dog implements Robotic {
 		energy += 10;
 	}
 	
+	//Not currently used
 	@Override
 	public void play() {
 		energy -= 2;
