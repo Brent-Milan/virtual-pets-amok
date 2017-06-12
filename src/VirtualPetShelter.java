@@ -5,10 +5,11 @@ import java.util.Map.Entry;
 
 public class VirtualPetShelter {
 
-	protected int litterBox = 0;
 
 	private Map<String, VirtualPet> shelterPets = new HashMap<String, VirtualPet>();
 
+	protected int litterBox = 0;
+	
 	protected void addPet(VirtualPet addMe) {
 		shelterPets.put(addMe.type, addMe);
 		// System.out.println(addPetAnnounce(addMe));
@@ -29,8 +30,8 @@ public class VirtualPetShelter {
 	} 
 	
 	protected void displayOrganicStatus() {
-		System.out.println("  Name\t  | Hunger | Thirst |");
-		System.out.println("--------------------------------");
+		System.out.println("  Name\t  | Hunger | Thirst |		[Don't let stats get too high (1-20)]");
+		System.out.println("-----------------------------");
 		for(VirtualPet current: pets()) {
 			if(current instanceof OrganicDog) {
 				System.out.println(current.name + "\t\t" + ((OrganicDog)current).hunger + "\t" + ((OrganicDog)current).thirst);
@@ -42,7 +43,7 @@ public class VirtualPetShelter {
 	}
 	
 	protected void displayRoboticStatus() {
-		System.out.println("\n  Name\t  | Maintenance| Energy |");
+		System.out.println("\n  Name\t  | Maintenance| Energy |	    [Don't let stats get too low (1-10)]");
 		System.out.println("------------------------------------");
 		for(VirtualPet current: pets()) {
 			if(current instanceof RobotDog) {
@@ -179,6 +180,35 @@ public class VirtualPetShelter {
 	public void cleanLitterBox() {
 		litterBox = 0;
 	}
+	
+	
+	public void litterTick() {
+		litterBox += 1;
+	}
+	
+	protected void tickAll(VirtualPetShelter s) {
+	for(VirtualPet current: pets()) {
+		if(current instanceof RobotDog) {
+			((RobotDog)current).maintenance -= 1;
+			((RobotDog)current).energy -= 1;
+		}
+		if(current instanceof RobotCat) {
+			((RobotCat)current).maintenance -= 1;
+			((RobotCat)current).energy -= 1;
+		}
+		if(current instanceof OrganicDog) {
+			((OrganicDog)current).hunger += 1;
+			((OrganicDog)current).thirst += 1;
+			((OrganicDog)current).wasteLevel += 1;
+		}
+		if(current instanceof OrganicCat) {
+			((OrganicCat)current).hunger +=1;
+			((OrganicCat)current).thirst += 1;
+		}
+	}
+	litterBox++;
+}
+	
 	
 	
 //	protected void feedPet(String message) {

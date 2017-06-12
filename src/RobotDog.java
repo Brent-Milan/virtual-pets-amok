@@ -31,7 +31,7 @@ public class RobotDog extends Dog implements Robotic {
 		energy -= 1;
 	}
 	
-	protected boolean isHappy() {
+	public boolean isHappy() {
 		if(maintenance >= 1 && energy >= 1) {
 			return true;
 		} return false;

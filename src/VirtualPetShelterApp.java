@@ -52,28 +52,19 @@ public class VirtualPetShelterApp {
 		
 		switch(userInput) {
 			case 1: 
-				if(shelter.getSize() == 1) {
-					System.out.println("Your shelter pet has been fed!");
-				} else {
-					System.out.println("All " + shelter.getSize() + " organic animals have been fed!");
-				}
+				System.out.println("All organic animals have been fed!");
 				shelter.feedAll();
+				shelter.tickAll(shelter);
 				break;
 			case 2:
-				if(shelter.getSize() == 1) {
-					System.out.println("Your organic shelter pet has been watered!");
-				} else {
-					System.out.println("All " + shelter.getSize() + " organic animals have been fed!");
-				}
+				System.out.println("All organic animals have been fed!");
 				shelter.waterAll();
+				shelter.tickAll(shelter);
 				break;
 			case 3:	
-				if(shelter.getSize() == 1) {
-					System.out.println("Your robotic shelter pet has been charged!");
-				} else {
-					System.out.println("All " + shelter.getSize() + " robotic animals have been charge!");
-				}
+				System.out.println("All robotic animals have been charged!");
 				shelter.chargeAll();
+				shelter.tickAll(shelter);
 				break;
 			case 4: 
 				System.out.println("Oil applied, drivers updated, and general maintenance performed on your robotic pets.");
@@ -89,14 +80,17 @@ public class VirtualPetShelterApp {
 					} else {
 						System.out.println("\nPet located. You played with " + userChoice);
 					}
-					break;
+				shelter.tickAll(shelter);
+				break;
 			case 6: 
 				System.out.println("The litter box has been cleaned. This should keep the cats (and everyone else) healthy");
 				shelter.cleanLitterBox();
+				shelter.tickAll(shelter);
 				break;
 			case 7:
 				System.out.println("All dog cages have been cleaned. This should keep the dogs (and everyone else) healthy");
 				shelter.cleanCages();
+				shelter.tickAll(shelter);
 				break;
 			default:
 				System.out.println("This isn't rocket science. Back to the top");
