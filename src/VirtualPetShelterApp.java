@@ -98,5 +98,6 @@ public class VirtualPetShelterApp {
 	}
 		while (shelter.areRoboticsAlive() && shelter.areOrganicsAlive() && shelter.isCageCritical() && shelter.isLitterBoxCritical());
 
+	System.out.println("Game over, man. Pet happiness is suffering. Keep things charged, fed, and clean!");
 	}
 }
