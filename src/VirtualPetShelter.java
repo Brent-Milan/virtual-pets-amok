@@ -6,86 +6,121 @@ import java.util.Map.Entry;
 public class VirtualPetShelter {
 
 	protected int litterBox = 0;
-	
+
 	private Map<String, VirtualPet> shelterPets = new HashMap<String, VirtualPet>();
-	
+
 	protected void addPet(VirtualPet addMe) {
 		shelterPets.put(addMe.type, addMe);
-		//System.out.println(addPetAnnounce(addMe));
+		// System.out.println(addPetAnnounce(addMe));
 	}
-	
+
 	protected void addPetAnnounce() {
-		for(VirtualPet x: shelterPets.values()) {
-		System.out.println(x.name + "has been added to the shelter!");
+		for (VirtualPet x : shelterPets.values()) {
+			System.out.println(x.name + " has been added to the shelter!");
 		}
 	}
-	
+
 	/****************************************************
-	 * Methods for checking number of occurrences of an interface
-	 * OR checking map size
+	 * Methods for checking number of occurrences of an interface OR checking
+	 * map size
 	 ***************************************************/
-	protected Collection<VirtualPet> pets(){
+	protected Collection<VirtualPet> pets() {
 		return shelterPets.values();
 	}
-	
+
 	protected int robotCount() {
 		int count = 0;
-		for(VirtualPet current: pets()) {
-			if(current instanceof Robotic) {
+		for (VirtualPet current : pets()) {
+			if (current instanceof Robotic) {
 				count++;
 			}
-		} return count;
+		}
+		return count;
 	}
-	
+
 	protected int getSize() {
 		return shelterPets.size();
 	}
-	
-	
+
 	protected void feedAll() {
-		for(VirtualPet current : shelterPets.values()) {
-			if(current instanceof Organic) {
-			((Organic) current).feed();
+		for (VirtualPet current : shelterPets.values()) {
+			if (current instanceof Organic) {
+				((Organic) current).feed();
 			}
 		}
 	}
-	
+
 	protected void waterAll() {
-		for(VirtualPet current : shelterPets.values()) {
-			if(current instanceof Organic) {
-			((Organic) current).feed();
+		for (VirtualPet current : shelterPets.values()) {
+			if (current instanceof Organic) {
+				((Organic) current).feed();
 			}
 		}
 	}
-	
+
 	protected void chargeAll() {
-		for(VirtualPet current : pets()) {
-			if(current instanceof Robotic) {
-			((Robotic) current).charge();
+		for (VirtualPet current : pets()) {
+			if (current instanceof Robotic) {
+				((Robotic) current).charge();
 			}
 		}
 	}
-	
+
 	protected void maintainAll() {
-		for(VirtualPet current: pets()) {
-			if(current instanceof Robotic) {
-			((Robotic) current).maintain();
+		for (VirtualPet current : pets()) {
+			if (current instanceof Robotic) {
+				((Robotic) current).maintain();
 			}
 		}
 	}
 	
-	protected void displayPets() {
-		for(Entry<String, VirtualPet> current: shelterPets.entrySet()) {
-			String petType = current.getKey();
-			VirtualPet pet = current.getValue();
-			System.out.println("ID: " + petType + "  Name: " + pet.name); 
+	protected void cleanCages() {
+		for (VirtualPet current : pets()) {
+			if (current instanceof OrganicDog) {
+				((OrganicDog) current).cleanCage();
+			}
+		}
 	}
-}
+
+	protected void displayPets() {
+		for (Entry<String, VirtualPet> current : shelterPets.entrySet()) {
+			VirtualPet pet = current.getValue();
+			String petType = current.getKey();
+			System.out.println("Type: " + petType + "  Name: " + pet.name);
+		}
+	}
+
+	protected boolean isCageClean() {
+		for(VirtualPet current: pets()) {
+			if(current instanceof OrganicDog) {
+				return ((OrganicDog) current).wasteLevel <= 15;
+			}	
+		} return false;
+	}
 	
+	
+	
+	protected boolean petCheck(String message) {
+		for (VirtualPet current : pets()) {
+			if (message.equalsIgnoreCase(current.name)) {
+				return true;
+			} 
+		} return false;
+	}
+	
+	
+	
+//	protected void feedPet(String message) {
+//		for (VirtualPet current : pets()) {
+//			if (message.equalsIgnoreCase(current.name)) {
+//				current.feed();
+//			} 
+	
+	
+
+
 	public void cleanLitterBox() {
 		litterBox = 0;
 	}
-	
-	
-	
+
 }

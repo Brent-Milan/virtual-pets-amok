@@ -23,6 +23,7 @@ public abstract class VirtualPet {
 		return "";
 	}
 	
+	
 //	protected void tick(Dog x){
 //		happiness -= 2;
 //		if( x = x.instanceOf(RobotDog)) {

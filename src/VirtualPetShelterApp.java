@@ -17,6 +17,7 @@ public class VirtualPetShelterApp {
 		shelter.addPet(oDog);
 		shelter.addPet(oCat);
 		
+		System.out.println("Here are some pets to get you started:\n");
 		shelter.addPetAnnounce();
 	
 		System.out.println("\n\nWelcome To The Team!! Remember our motto: ");
@@ -37,10 +38,8 @@ public class VirtualPetShelterApp {
 		System.out.println("3. Charge all robotic pets");
 		System.out.println("4. Perform maintenance on all robotic pets");
 		System.out.println("5. Play with a pet");
-		System.out.println("6. Adopt a shelter pet");
-		System.out.println("7. Admit a homeless pet");
-		System.out.println("8. Clean the cats' litter box");
-		System.out.println("9. Clean the cages of all organic dogs.");
+		System.out.println("6. Clean the shelter litter box");
+		System.out.println("7. Clean the cages of all organic dogs.");
 //			if(!shelter.allClean()) {
 //				System.out.println("\nSome of the animals are quite dirty. Time to clean the cages.");
 //			}
@@ -75,11 +74,29 @@ public class VirtualPetShelterApp {
 			case 4: 
 				System.out.println("Oil applied, drivers updated, and general maintenance performed on your robotic pets.");
 				shelter.maintainAll();
+			case 5:
+				shelter.displayPets();
+				System.out.println("\nType the name of the pet you wish to play with:");
+				String userChoice = input.next();
+					if(!shelter.petCheck(userChoice)) {
+						System.out.println("\nYour input is invalid.\nEnter the name of the pet you wish to play with: ");
+						userChoice = input.next();
+					} else {
+						System.out.println("\nPet located. You played with " + userChoice);
+					}
+			case 6: 
+				System.out.println("The litter box has been cleaned. This should keep the cats (and everyone else) healthy");
+				shelter.cleanLitterBox();
+			case 7:
+				System.out.println("All dog cages have been cleaned. This should keep the dogs (and everyone else) healthy");
+				shelter.cleanCages();
 			default:
-		}
+								
 	
 	
 	
+
+	
+			} // end switch
 	}
-	
 }
