@@ -1,10 +1,11 @@
 
-public class RobotDog extends VirtualPet implements Robotic {
+public class RobotDog extends Dog implements Robotic {
 
 	protected int maintenance; // 1 - 10 Keep High
 	protected int energy;  // 1 - 10 Keep High
 	
-	public RobotDog() {
+	public RobotDog(String name, String type) {
+		super(name, type);
 		maintenance = 10;
 		energy = 10;
 	}
