@@ -41,4 +41,10 @@ public class OrganicDog extends Dog implements Organic{
 	public void cleanCage() {
 		wasteLevel = 0;
 	}
+	
+	public boolean isHappy() {
+		if(hunger <= 19 && thirst <= 19) {
+			return true;
+		} return false;
+	}
 }

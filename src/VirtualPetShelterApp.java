@@ -23,14 +23,14 @@ public class VirtualPetShelterApp {
 		System.out.println("\n\nWelcome To The Team!! Remember our motto: ");
 		System.out.println("\n\"Market-friendly name; but corporate culture\".");
 	
-//	do {
+	do {
 		System.out.println("\n----------------------------------------------------");
 		System.out.println("\nWelcome to the *Altruistic Hipster* Pet Shelter:\n");
 		System.out.println("Thank you for interning. We're happy to not pay you!\n");
 		
 		System.out.println("This is the current status of your pets: \n");
 		
-//		shelter.displayMenu();
+		shelter.displayMenu();
 			
 		System.out.println("\nWhat would you like to do?");
 		System.out.println("\n1. Feed all organic pets.");
@@ -40,9 +40,11 @@ public class VirtualPetShelterApp {
 		System.out.println("5. Play with a pet");
 		System.out.println("6. Clean the shelter litter box");
 		System.out.println("7. Clean the cages of all organic dogs.");
-//			if(!shelter.allClean()) {
-//				System.out.println("\nSome of the animals are quite dirty. Time to clean the cages.");
-//			}
+			if(!shelter.isLitterBoxClean()) {
+				System.out.println("\nWARNING: The shelter litter box is overflowing. Please clean it ASAP.");
+			} else if (!shelter.isCageClean()) {
+				System.out.println("\n WARNING: The dog cages are a filthy mess. Please clean them ASAP".);
+			}
 		int userInput = input.nextInt();
 		
 		
@@ -74,6 +76,7 @@ public class VirtualPetShelterApp {
 			case 4: 
 				System.out.println("Oil applied, drivers updated, and general maintenance performed on your robotic pets.");
 				shelter.maintainAll();
+				break;
 			case 5:
 				shelter.displayPets();
 				System.out.println("\nType the name of the pet you wish to play with:");
@@ -84,19 +87,20 @@ public class VirtualPetShelterApp {
 					} else {
 						System.out.println("\nPet located. You played with " + userChoice);
 					}
+					break;
 			case 6: 
 				System.out.println("The litter box has been cleaned. This should keep the cats (and everyone else) healthy");
 				shelter.cleanLitterBox();
+				break;
 			case 7:
 				System.out.println("All dog cages have been cleaned. This should keep the dogs (and everyone else) healthy");
 				shelter.cleanCages();
+				break;
 			default:
-								
-	
-	
-	
+				System.out.println("This isn't rocket science. Back to the top");
+		}
+	}
+		while (shelter.areRoboticsAlive() && shelter.areOrganicsAlive() && shelter.isCageCritical() && shelter.isLitterBoxCritical());
 
-	
-			} // end switch
 	}
 }

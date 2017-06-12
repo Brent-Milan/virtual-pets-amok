@@ -98,6 +98,40 @@ public class VirtualPetShelter {
 		} return false;
 	}
 	
+	protected boolean isLitterBoxClean() {
+		return litterBox <=15;
+	}
+	
+	protected boolean isCageCritical() {
+		for(VirtualPet current: pets()) {
+			if(current instanceof OrganicDog) {
+				return ((OrganicDog) current).wasteLevel >= 20;
+			}	
+		} return false;
+	}
+	
+	protected boolean isLitterBoxCritical() {
+		return litterBox >= 20;
+	}
+	
+	protected boolean areOrganicsAlive() {
+		for(VirtualPet current: pets()) {
+			if(current instanceof Organic) {
+				return ((Organic) current).isHappy();
+			}	
+		} return false;
+	}
+	
+	protected boolean areRoboticsAlive() {
+		for(VirtualPet current: pets()) {
+			if(current instanceof Robotic) {
+				return ((Robotic) current).isHappy();
+			}	
+		} return false;
+	}
+		
+	
+		
 	
 	
 	protected boolean petCheck(String message) {
@@ -107,6 +141,9 @@ public class VirtualPetShelter {
 			} 
 		} return false;
 	}
+	
+	
+	
 	
 	
 	

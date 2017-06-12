@@ -7,4 +7,6 @@ public interface Robotic {
 	// behavior to recharge robotic pet
 	void charge();
 	
+	boolean isHappy();
+	
 }

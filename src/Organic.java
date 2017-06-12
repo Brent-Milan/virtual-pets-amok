@@ -7,5 +7,5 @@ public interface Organic {
 	//behavior to water animal
 	void water();
 		
-	
+	boolean isHappy();
 }

@@ -25,9 +25,16 @@ public class RobotDog extends Dog implements Robotic {
 		energy -= 2;
 	}
 	
-//	@Override
-//	public void walk(){
-//		happiness += 5;	
-//	}
+	@Override
+	public void walk(){
+		happiness += 5;	
+		energy -= 1;
+	}
+	
+	protected boolean isHappy() {
+		if(maintenance >= 1 && energy >= 1) {
+			return true;
+		} return false;
+	}
 	
 }

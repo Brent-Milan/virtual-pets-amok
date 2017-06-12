@@ -4,10 +4,8 @@ public abstract class VirtualPet {
 	protected String name;
 	protected String type;
 	protected String happiness;
-	// Note: AI pets also express happiness/discontent
-	// in response to care/neglect.
+	// Note: AI pets also express happiness
 	
-	protected boolean health;
 	
 	protected VirtualPet(String name, String type) {
 		this.name = name;

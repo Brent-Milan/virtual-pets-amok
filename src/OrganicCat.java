@@ -30,6 +30,11 @@ public class OrganicCat extends Cat implements Organic{
 		happiness += 5;
 	}
 	
+	public boolean isHappy() {
+		if(hunger <= 19 && thirst <= 19) {
+			return true;
+		} return false;
+	}
 	
 	
 }
