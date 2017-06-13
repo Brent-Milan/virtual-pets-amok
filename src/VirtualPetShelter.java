@@ -148,19 +148,18 @@ public class VirtualPetShelter {
 		return litterBox >= 20;
 	}
 	
-	protected boolean areOrganicsAlive() {
-		for(VirtualPet current: pets()) {
-			if(current instanceof Organic) {
-				return ((Organic) current).isHappy();
-			}	
-		} return false;
-	}
+//	protected boolean areOrganicsAlive() {
+//		for(VirtualPet current: pets()) {
+//			if(current instanceof Organic) {
+//				return ((Organic) current).isHappy();
+//			}	
+//		} return false;
+//	}
 	
-	protected boolean areRoboticsAlive() {
+	protected boolean petsAreHappy() {
 		for(VirtualPet current: pets()) {
-			if(current instanceof Robotic) {
-				return ((Robotic) current).isHappy();
-			}	
+			 int check = current.getHappiness();
+			 return check >= 1;
 		} return false;
 	}
 		

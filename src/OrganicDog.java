@@ -19,23 +19,38 @@ public class OrganicDog extends Dog implements Organic{
 	@Override
 	public void feed() {
 		 hunger -= 10;
-		
+		 if(hunger < 0) {
+			 hunger = 0;
+		 }
 	}
 	
 	@Override
 	public void water() {
 		thirst -= 10;
+		if(thirst < 0) {
+			 thirst = 0;
+		 }
+		happiness += 5;
+		if (happiness > 10) {
+			happiness = 10;
+		}
 	}
 	
 	@Override
-	public void play(){
+	public void play()	{
 		happiness += 5;
+		if (happiness > 10) {
+			happiness = 10;
+		}
 	}
 	
 	@Override
 	protected void walk() {
 		happiness += 5;
-		wasteLevel -= 4;  //reduces waste by double the level of tick()
+		if (happiness > 10) {
+			happiness = 10;
+		}
+		wasteLevel -= 4; 
 	}
 	
 	
@@ -44,8 +59,8 @@ public class OrganicDog extends Dog implements Organic{
 	}
 	
 	public boolean isHappy() {
-		if(hunger <= 19 && thirst <= 19) {
-			return true;
-		} return false;
+		return happiness >= 1;
 	}
+	
+	
 }

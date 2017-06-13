@@ -25,7 +25,7 @@ public class OrganicCat extends Cat implements Organic{
 	
 	@Override
 	public void water() {
-		thirst -= 10;
+		thirst -= 10;S
 		if(thirst < 0) {
 			 thirst = 0;
 		 }
