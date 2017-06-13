@@ -95,7 +95,7 @@ public class VirtualPetShelter {
 	protected void waterAll() {
 		for (VirtualPet current : shelterPets.values()) {
 			if (current instanceof Organic) {
-				((Organic) current).feed();
+				((Organic) current).water();
 			}
 		}
 	}
