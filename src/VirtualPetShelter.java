@@ -44,14 +44,16 @@ public class VirtualPetShelter {
 	}
 	
 	protected void displayRoboticStatus() {
-		System.out.println("\n  Name\t  | Maintenance| Energy |	    [Don't let stats get too low (1-10)]");
-		System.out.println("------------------------------------");
+		System.out.println("Name\t|Maintenance\t|Energy\t|Happiness	    [Don't let stats get too low (1-10)]");
+		System.out.println("------------------------------------------");
 		for(VirtualPet current: pets()) {
 			if(current instanceof RobotDog) {
-				System.out.println(current.name + "\t\t" + ((RobotDog)current).maintenance + "\t" + ((RobotDog)current).energy);
+				System.out.println(current.name + "\t " + ((RobotDog)current).maintenance + "\t\t " + ((RobotDog)current).energy
+						+ "\t " + ((RobotDog)current).happiness);
 			}
 			if(current instanceof RobotCat) {
-				System.out.println(current.name + "\t\t" + ((RobotCat)current).maintenance + "\t" + ((RobotCat)current).energy);
+				System.out.println(current.name + "\t " + ((RobotCat)current).maintenance + "\t\t " + ((RobotCat)current).energy
+						+ "\t " + ((RobotCat)current).happiness);
 			}
 		}
 	}
