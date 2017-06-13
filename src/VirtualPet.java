@@ -25,3 +25,5 @@ public abstract class VirtualPet {
 		return happiness;
 	}
 	
+}
+	

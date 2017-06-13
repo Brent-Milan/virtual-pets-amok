@@ -96,7 +96,7 @@ public class VirtualPetShelterApp {
 				System.out.println("This isn't rocket science. Back to the top");
 		}
 	}
-		while (shelter.petsAreHappy() && shelter.isCageCritical() && shelter.isLitterBoxCritical());
+		while (shelter.petsAreHappy());
 
 	System.out.println("Game over, man. Pet happiness is suffering. Keep things charged, fed, and clean!");
 	}

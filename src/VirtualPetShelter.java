@@ -29,14 +29,16 @@ public class VirtualPetShelter {
 	} 
 	
 	protected void displayOrganicStatus() {
-		System.out.println("  Name\t  | Hunger | Thirst |		[Don't let stats get too high (1-20)]");
-		System.out.println("-----------------------------");
+		System.out.println("Name\t|Hunger\t|Thirst\t|Happiness		[Don't let hunger/thirst get too high (1-20)]");
+		System.out.println("------------------------------------------");
 		for(VirtualPet current: pets()) {
 			if(current instanceof OrganicDog) {
-				System.out.println(current.name + "\t\t" + ((OrganicDog)current).hunger + "\t" + ((OrganicDog)current).thirst);
+				System.out.println(current.name + "\t " + ((OrganicDog)current).hunger + "\t " + ((OrganicDog)current).thirst
+						+ "\t " + ((OrganicDog)current).happiness);
 			}
 			if(current instanceof OrganicCat) {
-				System.out.println(current.name + "\t\t" + ((OrganicCat)current).hunger + "\t" + ((OrganicCat)current).thirst);
+				System.out.println(current.name + "\t " + ((OrganicCat)current).hunger + "\t " + ((OrganicCat)current).thirst
+						+ "\t " + ((OrganicCat)current).happiness);
 			}
 		}
 	}
@@ -148,13 +150,6 @@ public class VirtualPetShelter {
 		return litterBox >= 20;
 	}
 	
-//	protected boolean areOrganicsAlive() {
-//		for(VirtualPet current: pets()) {
-//			if(current instanceof Organic) {
-//				return ((Organic) current).isHappy();
-//			}	
-//		} return false;
-//	}
 	
 	protected boolean petsAreHappy() {
 		for(VirtualPet current: pets()) {
@@ -173,13 +168,10 @@ public class VirtualPetShelter {
 	}
 	
 	
-	
-	
 	public void cleanLitterBox() {
 		litterBox = 0;
 	}
-	
-	
+		
 	public void litterTick() {
 		litterBox += 1;
 	}
