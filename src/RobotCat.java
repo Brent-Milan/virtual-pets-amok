@@ -39,6 +39,6 @@ public class RobotCat extends Cat implements Robotic{
 	}
 	
 	protected boolean isHappy() {
-		return happiness >= 1;
+		return happiness >= 1 && energy >= 1 && maintenance >= 1;
 	}
 }

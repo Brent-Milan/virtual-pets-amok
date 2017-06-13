@@ -59,7 +59,7 @@ public class OrganicDog extends Dog implements Organic{
 	}
 	
 	public boolean isHappy() {
-		return happiness >= 1;
+		return happiness >= 1 && thirst <= 20 && hunger <= 20;
 	}
 	
 	
